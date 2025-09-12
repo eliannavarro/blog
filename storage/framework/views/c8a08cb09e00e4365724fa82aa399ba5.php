@@ -25,7 +25,6 @@
 <?php endif; ?>
 <?php $component->withAttributes(['class' => 'mb-4']); ?>
      <?php $__env->slot('title', null, []); ?> Exito <?php $__env->endSlot(); ?>
-    Contenido de la alerta.
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal2a81c3e0bd0367ff1c2023bb70c7d8d5)): ?>
@@ -36,7 +35,7 @@
 <?php $component = $__componentOriginal2a81c3e0bd0367ff1c2023bb70c7d8d5; ?>
 <?php unset($__componentOriginal2a81c3e0bd0367ff1c2023bb70c7d8d5); ?>
 <?php endif; ?>
-
+<p>hola mundo</p>
 <p>hola klk</p>
 
 <?php $__env->stopSection(); ?>
