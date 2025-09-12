@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        return view('posts.index');
+        $post = Post::all();
+        return view('posts.index', compact('post'));
     }
     public function create()
     {
@@ -16,7 +18,6 @@ class PostController extends Controller
     }
     public function store(Request $request)
     {
-        // Por ahora no guardamos nada, solo redirigimos
         return redirect()->route('post.index')->with('success', 'Post creado correctamente ✅');
     }
     public function show($post)

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,14 @@
 <body>
     <header></header>
     <h1>Aqui se mostraran todos los post</h1>
+    
     <footer></footer>
 </body>
-</html>
+</html> --}}
+
+
+@extends('components.app_layout')
+
+@section('content')
+    <h2>Aqui se mostraran todos los post</h2>
+@endsection

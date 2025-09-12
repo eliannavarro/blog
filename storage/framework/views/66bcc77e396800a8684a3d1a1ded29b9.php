@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>laravel 11 posts</title>
-</head>
-<body>
-    <header></header>
-    <h1>Aqui se mostraran todos los post</h1>
-    <footer></footer>
-</body>
-</html><?php /**PATH C:\wamp64\www\laravel\blog\resources\views/posts/index.blade.php ENDPATH**/ ?>
+
+
+
+
+
+<?php $__env->startSection('content'); ?>
+    <h2>Aqui se mostraran todos los post</h2>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('components.app_layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\wamp64\www\laravel\blog\resources\views/posts/index.blade.php ENDPATH**/ ?>
