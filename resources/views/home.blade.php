@@ -40,8 +40,8 @@
     <p>hola mundo</p> --}}
 <x-alert2 type="success" class="mb-4">
     <x-slot name="title">Exito</x-slot>
-</x-alert2>
-<p>hola klk</p>
+   Ha ingresado correctamente </x-alert2>
+<p>hola bienvenido</p>
 
 @endsection
 
