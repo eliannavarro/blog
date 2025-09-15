@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +7,24 @@
     <title>laravel 11 posts</title>
 </head>
 <body>
-    <h1>Aqui se muestra el post {{ $post }}<h1>
-</body>
+        <a href="{{ route('post.index') }}">⬅️ Volver al listado</a></body>
+
+<h2>Titulo: {{ $post->title }}</h2>
+
+   <h3>contenido:</h3>  <p>{{ $post->content }}</p>
+
 </html>
 
+ 
 
+
+ {{-- @extends('components.app_layout')
+
+@section('content')
+    <h2>{{ $post->title }}</h2>
+
+    <p>{{ $post->content }}</p>
+
+    <a href="{{ route('post.index') }}">⬅️ Volver al listado</a>
+@endsection
+ --}}

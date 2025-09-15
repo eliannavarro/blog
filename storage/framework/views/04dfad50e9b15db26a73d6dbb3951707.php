@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,7 @@
 </head>
 <body>
     <header>
+        <!-- Aquí podrías agregar un nav si quieres -->
     </header>
 
     <main>

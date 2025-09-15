@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,16 @@
     <title>laravel 11 posts</title>
 </head>
 <body>
-    <h1>Aqui se muestra el post <?php echo e($post); ?><h1>
-</body>
+        <a href="<?php echo e(route('post.index')); ?>">⬅️ Volver al listado</a></body>
+
+<h2>Titulo: <?php echo e($post->title); ?></h2>
+
+   <h3>contenido:</h3>  <p><?php echo e($post->content); ?></p>
+
 </html>
 
+ 
 
+
+ 
 <?php /**PATH C:\wamp64\www\laravel\blog\resources\views/posts/show.blade.php ENDPATH**/ ?>
