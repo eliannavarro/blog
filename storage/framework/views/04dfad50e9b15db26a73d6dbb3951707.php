@@ -1,12 +1,9 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Laravel 11</title>
 </head>
 <body>
@@ -15,7 +12,8 @@
     </header>
 
     <main>
-        <?php echo $__env->yieldContent('content'); ?> 
+        <?php echo $__env->yieldContent('content'); ?>
+        
     </main>
 
     <footer>

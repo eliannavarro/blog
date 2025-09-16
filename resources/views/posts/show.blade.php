@@ -1,19 +1,28 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>laravel 11 posts</title>
-</head>
-<body>
-        <a href="{{ route('post.index') }}">⬅️ Volver al listado</a></body>
+@extends('components.app_layout')
 
-<h2>Titulo: {{ $post->title }}</h2>
+@section('content')
+    <a href="{{ route('post.index') }}">⬅️ Volver al listado</a>
 
-   <h3>contenido:</h3>  <p>{{ $post->content }}</p>
+    <h2>Título: {{ $post->title }}</h2>
 
-</html>
+    <p><strong>Categoría:</strong> {{ $post->category ?? 'Sin categoría' }}</p>
+
+    <h3>Contenido:</h3>
+    <p>{{ $post->content }}</p>
+
+    <a href="{{ route('post.edit', $post->id) }}">Editar post</a>
+
+
+    <form action="/post/{{$post->id}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">
+            Eliminar post
+        </button>
+    </form>
+
+@endsection
+
 
  
 

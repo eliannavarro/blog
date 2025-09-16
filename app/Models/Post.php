@@ -9,6 +9,9 @@ use function Pest\Laravel\castAsJson;
 class Post extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title', 'category', 'content'];
+
 protected function casts(): array
 {
     return [

@@ -20,9 +20,14 @@ Route::post('/post', [PostController::class, 'store'])->name('post.store');
 // Mostrar un post específico
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
 
-route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
+// Formulario para editar un post
+Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
 
-// Ruta de pruebas
+// Actualizar un post existente
+Route::put('/post/{post}', [PostController::class, 'update'])->name('post.update');
+
+Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
+// Ruta de pruebas (desactivada)
 // Route::get('/prueba', function () {
 //     $post = Post::find(1);
 //     return $post->is_active ? 'Activo ✅' : 'Inactivo ❌';

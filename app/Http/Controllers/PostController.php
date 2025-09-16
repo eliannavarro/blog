@@ -10,7 +10,7 @@ class PostController extends Controller
     // Mostrar listado de posts
     public function index()
     {
-        $posts = Post::orderBy('id', 'desc')->get();
+$posts = Post::orderBy('id', 'desc')->paginate(200);        
         return view('posts.index', compact('posts'));
     }
 
@@ -22,16 +22,21 @@ class PostController extends Controller
 
     // Guardar un nuevo post
     public function store(Request $request)
-{
-    $post = new Post();
-    $post->title = $request->input('title'); 
-    $post->content = $request->input('content');
-    $post->category = $request->has('category');
-    $post->save();
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'category' => 'nullable|string|max:255',
+            'content' => 'required|string',
+        ]);
 
-    return redirect()->route('post.index');
-}
-    
+        $post = new Post();
+        $post->title = $request->input('title'); 
+        $post->content = $request->input('content');
+        $post->category = $request->input('category'); // 🔹 corregido
+        $post->save();
+
+        return redirect()->route('post.index')->with('success', 'Post creado correctamente ✅');
+    }
 
     // Mostrar un post específico
     public function show(Post $post)
@@ -39,10 +44,37 @@ class PostController extends Controller
         return view('posts.show', compact('post'));
     }
 
-public function edit($post)
+    // Mostrar formulario de edición
+    public function edit(Post $post)
     {
         return view('posts.edit', compact('post'));
     }
 
-}
+    // Actualizar un post existente
+    public function update(Request $request, Post $post)
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'category' => 'nullable|string|max:255',
+        'content' => 'required|string',
+    ]);
 
+    // Guardamos cambios
+    $post->title = $request->title;
+    $post->category = $request->category;
+    $post->content = $request->content;
+    $post->save();
+
+    // Redirigimos a la vista del post actualizado
+    return redirect()->route('post.show', $post->id)
+        ->with('success', 'Post actualizado correctamente ✅');
+}
+public function destroy(Post $post)
+{
+    $post = Post::find($post->id);
+    $post->delete();
+    return redirect()->route('post.index')
+        ->with('success', 'Post eliminado correctamente ✅');
+
+}
+}

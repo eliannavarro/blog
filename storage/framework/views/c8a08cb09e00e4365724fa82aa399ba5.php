@@ -37,6 +37,9 @@
 <?php endif; ?>
 <p>hola bienvenido</p>
 
+<a href="<?php echo e(route('post.index')); ?>">
+     post
+</a>
 <?php $__env->stopSection(); ?>
 
 

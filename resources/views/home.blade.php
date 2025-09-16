@@ -43,5 +43,8 @@
    Ha ingresado correctamente </x-alert2>
 <p>hola bienvenido</p>
 
+<a href="{{ route('post.index') }}">
+     post
+</a>
 @endsection
 
