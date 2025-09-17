@@ -1,39 +1,47 @@
-@extends('components.app_layout')
+{{-- @extends('components.app_layout')
 
 @section('content')
-    <a href="{{ route('post.index') }}">⬅️ Volver al listado</a>
+<a href="{{ route('post.index') }}">⬅️ Volver al listado</a>
 
-    <h2>Título: {{ $post->title }}</h2>
+<h2>Título: {{ $post->title }}</h2>
+<p><strong>Categoría:</strong> {{ $post->category ?? 'Sin categoría' }}</p>
+<h3>Contenido:</h3>
+<p>{{ $post->content }}</p>
 
-    <p><strong>Categoría:</strong> {{ $post->category ?? 'Sin categoría' }}</p>
+<a href="{{ route('post.edit', $post) }}">Editar post</a>
 
-    <h3>Contenido:</h3>
-    <p>{{ $post->content }}</p>
+<form action="{{ route('post.destroy', $post) }}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button type="submit">Eliminar post</button>
+</form>
+@endsection --}}
 
-    <a href="{{ route('post.edit', $post->id) }}">Editar post</a>
-
-
-    <form action="/post/{{$post->id}}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button type="submit">
-            Eliminar post
-        </button>
-    </form>
-
-@endsection
-
-
- 
-
-
- {{-- @extends('components.app_layout')
+ @extends('components.app_layout')
 
 @section('content')
-    <h2>{{ $post->title }}</h2>
+<a href="{{ route('post.index') }}">⬅️ Volver al listado</a>
 
-    <p>{{ $post->content }}</p>
+{{-- Mostrar mensajes de éxito --}}
+@if (session('success'))
+    <div style="color: green; font-weight: bold;">
+        {{ session('success') }}
+    </div>
+@endif
 
-    <a href="{{ route('post.index') }}">⬅️ Volver al listado</a>
+<h2>Título: {{ $post->title }}</h2>
+<p><strong>Categoría:</strong> {{ $post->category ?? 'Sin categoría' }}</p>
+<h3>Contenido:</h3>
+<p>{{ $post->content }}</p>
+
+<a href="{{ route('post.edit', $post) }}">✏️ Editar post</a>
+
+<form action="{{ route('post.destroy', $post) }}" method="POST" style="margin-top: 15px;">
+    @csrf
+    @method('DELETE')
+    <button type="submit" onclick="return confirm('¿Seguro que quieres eliminar este post?')">
+        🗑️ Eliminar post
+    </button>
+</form>
 @endsection
- --}}
+
