@@ -65,11 +65,11 @@ public function store(StorePostRequest $request)
 
     public function update(Request $request, Post $post)
     {
-        $request->validate([
-            'title' => 'required|string|max:255|unique:post,title,' . $post->id,
-            'category' => 'nullable|string|max:255',
-            'content' => 'required|string',
-        ]);
+        // $request->validate([
+        //     'title' => 'required|string|max:255|unique:post,title,' . $post->id,
+        //     'category' => 'nullable|string|max:255',
+        //     'content' => 'required|string',
+        // ]);
 
         $post->title = $request->title;
         $post->category = $request->category;
